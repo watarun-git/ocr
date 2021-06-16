@@ -12,3 +12,4 @@ numpy==1.19.5
 opencv-python
 pandas
 Pillow
+matplotlib
