@@ -103,10 +103,10 @@ if uploaded_file is not None:
         f.write('{} : {}'.format(k, v))
     f.close()
     
-    read_text_file = pd.read_csv ("temp.txt",encoding="SHIFT-JIS",delimiter='KAIGYO',engine='python',errors="ignore")
-    read_text_file.to_csv ("temp.csv", index=None,encoding="SHIFT-JIS",errors="ignore")
-    df = pd.read_csv("temp.csv",encoding="SHIFT-JIS",errors="ignore")
-    df.T.to_csv("temp.csv",encoding="SHIFT-JIS",errors="ignore")
+    read_text_file = pd.read_csv ("temp.txt",encoding="SHIFT-JIS",delimiter='KAIGYO',engine='python')
+    read_text_file.to_csv ("temp.csv", index=None,encoding="SHIFT-JIS")
+    df = pd.read_csv("temp.csv",encoding="SHIFT-JIS")
+    df.T.to_csv("temp.csv",encoding="SHIFT-JIS")
     with open ('temp.csv','r',encoding="SHIFT-JIS",errors="ignore") as f :
         reader = csv.reader(f)
         for line in reader:
