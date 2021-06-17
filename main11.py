@@ -18,7 +18,6 @@ import re
 import pandas as pd
 from googletrans import Translator
 translator = Translator()
-API_KEY : ${{ secrets.ACCESS_KEY }}
 
 # selectbox
 option = st.selectbox(
@@ -32,7 +31,7 @@ print(option)
 uploaded_file = st.file_uploader('just for TAA CAA Choose a sheet file',type=["png", "jpg", "jpeg"], accept_multiple_files=False)
 if uploaded_file is not None:
     # service accountのjsonからclientの生成
-    client = vision.ImageAnnotatorClient.from_service_account_json(API_KEY)
+    client = vision.ImageAnnotatorClient.from_service_account_json(${{ secrets.ACCESS_KEY }})
     
     # 対象画像の読み込み
     content = uploaded_file.read()
