@@ -18,7 +18,7 @@ import re
 import pandas as pd
 from googletrans import Translator
 translator = Translator()
-API_KEY = ${{ secrets.ACCESS_KEY }}
+API_KEY : ${{ secrets.ACCESS_KEY }}
 
 # selectbox
 option = st.selectbox(
