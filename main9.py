@@ -27,7 +27,12 @@ option = st.selectbox(
 
 #st.write('You selected: ', option)
 print(option)
-st.write("project_id:", st.secrets["project_id"])
+with open('secrets.toml') as file:
+    # TOMLから辞書
+    obj = toml.load(file)
+    # 辞書からJSON
+    js = json.dumps(obj, indent=2)
+    print(js)
 
 uploaded_file = st.file_uploader('just for TAA CAA Choose a sheet file',type=["png", "jpg", "jpeg"], accept_multiple_files=False)
 if uploaded_file is not None:
