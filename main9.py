@@ -27,6 +27,7 @@ option = st.selectbox(
 
 #st.write('You selected: ', option)
 print(option)
+st.write("project_id:", st.secrets["project_id"])
 
 uploaded_file = st.file_uploader('just for TAA CAA Choose a sheet file',type=["png", "jpg", "jpeg"], accept_multiple_files=False)
 if uploaded_file is not None:
