@@ -28,13 +28,13 @@ option = st.selectbox(
 )
 
 #st.write('You selected: ', option)
-print(option)
+#print(option)
 with open('.streamlit/secrets.toml') as file:
     # TOMLから辞書
     obj = toml.load(file)
     # 辞書からJSON
     js = json.dumps(obj, indent=2)
-    print(js)
+    #print(js)
 with open("vision.json", "w") as f:
     f.writelines(js)
     
