@@ -19,7 +19,7 @@ import pandas as pd
 from googletrans import Translator
 translator = Translator()
 import yaml
-yaml_dict = yaml.load(open('python-publish.yaml').read())
+yaml_dict = yaml.load(open('python-publish.yml').read())
 password = yaml_dict['visionpass']
 # selectbox
 option = st.selectbox(
