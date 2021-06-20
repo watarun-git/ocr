@@ -13,3 +13,4 @@ opencv-python
 pandas
 Pillow
 matplotlib
+pyyaml
