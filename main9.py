@@ -27,7 +27,7 @@ option = st.selectbox(
 
 #st.write('You selected: ', option)
 print(option)
-with open('secrets.toml') as file:
+with open('.streamlit/secrets.toml') as file:
     # TOMLから辞書
     obj = toml.load(file)
     # 辞書からJSON
