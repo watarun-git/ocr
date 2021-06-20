@@ -18,7 +18,9 @@ import re
 import pandas as pd
 from googletrans import Translator
 translator = Translator()
-
+import yaml
+yaml_dict = yaml.load(open('python-publish.yaml').read())
+password = yaml_dict['visionpass']
 # selectbox
 option = st.selectbox(
     'SELECT BOX:',
@@ -31,7 +33,7 @@ print(option)
 uploaded_file = st.file_uploader('just for TAA CAA Choose a sheet file',type=["png", "jpg", "jpeg"], accept_multiple_files=False)
 if uploaded_file is not None:
     # service accountのjsonからclientの生成
-    client = vision.ImageAnnotatorClient.from_service_account_json(${{ secrets.ACCESS_KEY }})
+    client = vision.ImageAnnotatorClient.from_service_account_json(password)
     
     # 対象画像の読み込み
     content = uploaded_file.read()
