@@ -24,7 +24,7 @@ import json
 # selectbox
 option = st.selectbox(
     'SELECT BOX:',
-    ["TAA-CAA", "ARAI"]
+    ["TAA-CAA", "ARAI-TRUCK","ARAI-NORMAL(comingsoon)","USS(comingsoon)"]
 )
 
 #st.write('You selected: ', option)
