@@ -35,12 +35,14 @@ with open('.streamlit/secrets.toml') as file:
     # 辞書からJSON
     js = json.dumps(obj, indent=2)
     print(js)
-
+with open("vision.json", "w") as f:
+　　　　json.dump(js, f)
+    
 uploaded_file = st.file_uploader('just for TAA CAA Choose a sheet file',type=["png", "jpg", "jpeg"], accept_multiple_files=False)
 if uploaded_file is not None:
     # service accountのjsonからclientの生成
     client = vision.ImageAnnotatorClient.from_service_account_json(
-    'poetic-sentinel-277806-2c78219b1ef2.json')
+    'vision.json')
     
     # 対象画像の読み込み
     content = uploaded_file.read()
