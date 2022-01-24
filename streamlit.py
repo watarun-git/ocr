@@ -46,7 +46,7 @@ if uploaded_file is not None:
     # 対象画像の読み込み
     content = uploaded_file.read()
     image = vision.Image(content=content)
-    image_context = vision.ImageContext(language_hints=['ja-t-i0-handwrit'])
+    image_context = vision.ImageContext(language_hints=['ja'])
     
     # APIに投げる
     response = client.text_detection(image=image)
